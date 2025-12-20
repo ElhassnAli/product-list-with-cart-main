@@ -18,10 +18,11 @@ export default function App() {
     fetchData();
   }, []);
   console.log(data);
+  console.log(cart);
   return (
     <div className="p-12 bg-rose-50 flex justify-between items-start">
       {isLoading && <Loader />}
-      <MainPage data={data} />
+      <MainPage data={data} setCart={setCart} />
       <Cart cart={cart} />
     </div>
   );

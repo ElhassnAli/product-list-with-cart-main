@@ -1,3 +1,11 @@
-export default function CartProducts() {
-  return <h1>555555555555555</h1>;
+export default function CartProducts({ cart }) {
+  return (
+    <div>
+      <p>{cart.name}</p>
+      <p>{cart.price}</p>
+      <button>
+        <img src="/public/assets/images/icon-remove-item.svg" alt="" />
+      </button>
+    </div>
+  );
 }

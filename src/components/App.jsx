@@ -6,6 +6,7 @@ export default function App() {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [cart, setCart] = useState([]);
+  const [quantity, setQuantity] = useState(0);
   useEffect(() => {
     async function fetchData() {
       setIsLoading(true);
@@ -22,8 +23,13 @@ export default function App() {
   return (
     <div className="p-12 bg-rose-50 flex justify-between items-start">
       {isLoading && <Loader />}
-      <MainPage data={data} setCart={setCart} />
-      <Cart cart={cart} />
+      <MainPage
+        data={data}
+        setCart={setCart}
+        quantity={quantity}
+        setQuantity={setQuantity}
+      />
+      <Cart cart={cart} quantity={quantity} setQuantity={setQuantity} />
     </div>
   );
 }

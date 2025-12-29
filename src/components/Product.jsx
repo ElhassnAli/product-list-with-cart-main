@@ -6,7 +6,13 @@ export default function Product({ data, setCart }) {
   return (
     <div className="w-[32%]">
       <div className="relative mb-7">
-        <img src={data.image.desktop} alt={data.name} className="rounded-2xl" />
+        <img
+          src={data.image.desktop}
+          alt={data.name}
+          className={`rounded-2xl ${
+            quantity >= 1 ? "border-2 border-solid border-orange-600" : ""
+          }`}
+        />
         {quantity == 0 && (
           <Button setCart={setCart} data={data} setQuantity={setQuantity} />
         )}
@@ -20,3 +26,4 @@ export default function Product({ data, setCart }) {
     </div>
   );
 }
+// quantity === 1 ? "border border-solid border-orange-600" : "";

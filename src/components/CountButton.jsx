@@ -1,4 +1,3 @@
-import Button from "./Button";
 
 export default function CountButton({ quantity, setQuantity }) {
   return (

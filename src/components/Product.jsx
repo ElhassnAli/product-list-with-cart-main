@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "./Button";
 import CountButton from "./CountButton";
-export default function Product({ data, setCart }) {
+export default function Product({ data }) {
   const [quantity, setQuantity] = useState(0);
   return (
     <div className="w-[32%]">
@@ -14,10 +14,10 @@ export default function Product({ data, setCart }) {
           }`}
         />
         {quantity == 0 && (
-          <Button setCart={setCart} data={data} setQuantity={setQuantity} />
+          <Button  data={data} />
         )}
         {quantity > 0 && (
-          <CountButton quantity={quantity} setQuantity={setQuantity} />
+          <CountButton/>
         )}
       </div>
       <p>{data.category}</p>

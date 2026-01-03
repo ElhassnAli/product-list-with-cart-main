@@ -1,14 +1,14 @@
 import Empty from "./Empty";
 import CartProducts from "./CartProducts";
-export default function Cart({ cart }) {
+export default function Cart() {
   return (
     <div className="w-[25%] bg-white rounded-2xl p-2.5">
       <header className="text-orange-600 font-bold">
-        Your Cart ({cart.length})
+        Your Cart 
       </header>
       <main>
-        {cart.length == 0 && <Empty />}
-        {cart.length > 0 && cart.map((c) => <CartProducts cart={c} />)}
+         <Empty />
+        
       </main>
     </div>
   );

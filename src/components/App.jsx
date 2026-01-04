@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 export default function App() {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [cart, setCart] = useState([]);
   useEffect(() => {
     async function fetchData() {
       setIsLoading(true);
@@ -16,13 +17,13 @@ export default function App() {
     fetchData();
   }, []);
   console.log(data);
+  console.log(cart);
+
   return (
     <div className="p-12 bg-rose-50 flex justify-between items-start">
       {isLoading && <Loader />}
-      <MainPage
-        data={data}
-      />
-      <Cart/>
+      <MainPage data={data} onSetCart={setCart} />
+      <Cart cart={cart} />
     </div>
   );
 }

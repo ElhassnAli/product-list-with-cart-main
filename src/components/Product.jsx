@@ -19,7 +19,7 @@ export default function Product({
             onDecrement={() => onDecrement(cartItem.name)}
           />
         ) : (
-          <Button data={data} onAddToCart={onAddToCart} />
+          <Button data={data} onAddToCart={onAddToCart} >Add To Card</Button>
         )}
       </div>
       <p>{data.category}</p>

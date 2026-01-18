@@ -9,7 +9,9 @@ export default function MainPage({
   onOrder,
 }) {
   return (
-    <div className={`w-full md:w-[70%] ${onOrder && "pointer-events-none opacity-50"}`}>
+    <div
+      className={`w-full md:w-[70%] ${onOrder && "pointer-events-none opacity-50"}`}
+    >
       <header className="text-3xl md:text-5xl mb-5 font-serif">Deserts</header>
       <main className="flex flex-wrap gap-3 md:gap-5">
         {data.map((d) => {
@@ -22,7 +24,6 @@ export default function MainPage({
               onAddToCart={onAddToCart}
               onIncrement={onIncrement}
               onDecrement={onDecrement}
-              
             />
           );
         })}

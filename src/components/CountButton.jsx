@@ -4,6 +4,7 @@ export default function CountButton({ data, onIncrement, onDecrement }) {
       <button
         className="border rounded-2xl border-white w-6 h-6 flex justify-center items-center cursor-pointer"
         onClick={onDecrement}
+        
       >
         <img src="/assets/images/icon-decrement-quantity.svg" alt="decrement" />
       </button>
@@ -11,6 +12,7 @@ export default function CountButton({ data, onIncrement, onDecrement }) {
       <button
         className="border rounded-2xl border-white w-6 h-6 flex justify-center items-center cursor-pointer"
         onClick={onIncrement}
+        
       >
         <img src="/assets/images/icon-increment-quantity.svg" alt="increment" />
       </button>

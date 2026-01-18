@@ -1,5 +1,4 @@
-
-export default function CartProducts({ productData, onRemove}) {
+export default function CartProducts({ productData, children }) {
   return (
     <>
       <div className="flex justify-between items-center m-3 p-2 border-b border-gray-300">
@@ -15,15 +14,8 @@ export default function CartProducts({ productData, onRemove}) {
             </strong>
           </p>
         </div>
-
-        <button
-          onClick={onRemove}
-          className="ml-2  w-5 h-5 rounded-2xl border-black border flex justify-center items-center cursor-pointer"
-        >
-          <img src="/assets/images/icon-remove-item.svg" alt="remove" />
-        </button>
+        {children}
       </div>
-      
     </>
   );
 }

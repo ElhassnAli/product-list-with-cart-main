@@ -1,5 +1,5 @@
-import Button from "./Button";
-function Total({ products }) {
+
+function Total({ products, onConfirm}) {
   let allTotal = 0;
   products.forEach((ele) => {
     return (allTotal += ele.quantity * ele.price);
@@ -12,7 +12,7 @@ function Total({ products }) {
       </p>
 
       <div className="flex mb-5 justify-center text-center  items-center">
-        <p className="flex bg-rose-50 w-90 p-4 justify-center rounded-2xl">
+        <div className="flex bg-rose-50 w-90 p-4 justify-center rounded-2xl">
           <img
             src="/public/assets/images/icon-carbon-neutral.svg"
             alt="carbon-neutral"
@@ -20,10 +20,14 @@ function Total({ products }) {
           <p>
             This is a <strong>Carbon-Neutral</strong> delivery
           </p>
-        </p>
+        </div>
       </div>
       <div className="flex justify-center">
-        <button className="w-90 p-4 rounded-4xl bg-orange-500 text-white cursor-pointer">
+        <button
+          className="w-90 p-4 rounded-4xl bg-orange-500 text-white cursor-pointer"
+          onClick={() => onConfirm(true)}
+          
+        >
           Confirm Order
         </button>
       </div>

@@ -6,9 +6,10 @@ export default function MainPage({
   onAddToCart,
   onIncrement,
   onDecrement,
+  onOrder,
 }) {
   return (
-    <div className="w-[70%]">
+    <div className={`w-[70%] ${onOrder&& "pointer-events-none opacity-50"}`}>
       <header className="text-5xl mb-5 font-serif">Deserts</header>
       <main className="flex flex-wrap gap-5">
         {data.map((d) => {
@@ -21,6 +22,7 @@ export default function MainPage({
               onAddToCart={onAddToCart}
               onIncrement={onIncrement}
               onDecrement={onDecrement}
+              
             />
           );
         })}

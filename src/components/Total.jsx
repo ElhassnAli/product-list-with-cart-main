@@ -1,5 +1,4 @@
-
-function Total({ products, onConfirm}) {
+function Total({ products, onConfirm }) {
   let allTotal = 0;
   products.forEach((ele) => {
     return (allTotal += ele.quantity * ele.price);
@@ -11,11 +10,11 @@ function Total({ products, onConfirm}) {
         <strong className="text-3xl">${allTotal}</strong>
       </p>
 
-      <div className="flex mb-5 justify-center text-center  items-center">
-        <div className="flex bg-rose-50 w-90 p-4 justify-center rounded-2xl">
+      <div className="flex mb-5 justify-center text-center items-center">
+        <div className="flex bg-rose-50 w-80 p-4 justify-center rounded-2xl">
           <img
-            src="/public/assets/images/icon-carbon-neutral.svg"
-            alt="carbon-neutral"
+            src="/assets/images/icon-carbon-neutral.svg"
+            alt="Carbon neutral icon"
           />
           <p>
             This is a <strong>Carbon-Neutral</strong> delivery
@@ -24,9 +23,8 @@ function Total({ products, onConfirm}) {
       </div>
       <div className="flex justify-center">
         <button
-          className="w-90 p-4 rounded-4xl bg-orange-500 text-white cursor-pointer"
+          className="w-80 p-4 rounded-4xl bg-orange-500 text-white cursor-pointer"
           onClick={() => onConfirm(true)}
-          
         >
           Confirm Order
         </button>

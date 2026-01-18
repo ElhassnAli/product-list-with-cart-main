@@ -26,7 +26,7 @@ export default function Product({
           />
         ) : (
           <Button data={data} onAddToCart={onAddToCart}  >
-            Add To Card
+            Add To Cart
           </Button>
         )}
       </div>

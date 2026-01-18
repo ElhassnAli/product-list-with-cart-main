@@ -6,41 +6,56 @@ function OrderConfirmed({ cart, OnstartDefault }) {
   });
 
   return (
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white w-[25%] p-5 rounded-2xl">
-      <img
-        src="/assets/images/icon-order-confirmed.svg"
-        alt="Order confirmed icon"
-      />
-      <h1 className="text-4xl mb-3">Order Confirmed</h1>
-      <p className="mb-5">We hope you enjoy your food!</p>
+    <div className="fixed inset-0  bg-opacity-50 flex items-center justify-center p-4 z-50">
+      <div className="bg-white w-full max-w-sm md:max-w-md p-5 rounded-2xl max-h-[90vh] overflow-y-auto">
+        <img
+          src="/assets/images/icon-order-confirmed.svg"
+          alt="Order confirmed icon"
+          className="mb-3"
+        />
+        <h1 className="text-2xl md:text-4xl mb-3 font-bold">Order Confirmed</h1>
+        <p className="mb-5 text-gray-600">We hope you enjoy your food!</p>
 
-      <div className="p-5 bg-rose-50 rounded-2xl">
-        {cart.map((c) => (
-          <div key={c.name} className="flex justify-between items-center mb-3">
-            <div className="flex gap-5 ">
-              <img src={c.image.thumbnail} alt={c.name} className="w-16 h-16" />
-              <div>
-                <p>{c.name}</p>
-                <div className="flex gap-5 items-center">
-                  <strong className=" text-orange-600 text-lg">
-                    {c.quantity}x
-                  </strong>
-                  <span className="text-[14px]">@{c.price}</span>
+        <div className="p-4 md:p-5 bg-rose-50 rounded-2xl mb-5">
+          {cart.map((c) => (
+            <div
+              key={c.name}
+              className="flex justify-between items-start gap-3 mb-4 pb-4 border-b border-gray-200 last:border-b-0"
+            >
+              <div className="flex gap-3">
+                <img
+                  src={c.image.thumbnail}
+                  alt={c.name}
+                  className="w-12 h-12 md:w-16 md:h-16 rounded object-cover"
+                />
+                <div className="flex-1">
+                  <p className="font-semibold text-sm md:text-base">{c.name}</p>
+                  <div className="flex gap-3 items-center mt-1">
+                    <strong className="text-orange-600 text-sm">
+                      {c.quantity}x
+                    </strong>
+                    <span className="text-xs md:text-sm text-gray-600">
+                      @${c.price}
+                    </span>
+                  </div>
                 </div>
               </div>
+              <p className="font-semibold text-sm md:text-base whitespace-nowrap">
+                ${(c.quantity * c.price).toFixed(2)}
+              </p>
             </div>
-            <p>{c.quantity * c.price}</p>
-          </div>
-        ))}
+          ))}
 
-        <p className="flex justify-between pt-10">
-          <span>Order Total</span>
-          <strong className="text-base">${allTotal}</strong>
-        </p>
-      </div>
-      <div className="flex justify-center">
+          <p className="flex justify-between pt-4 border-t border-gray-300 mt-4">
+            <span className="font-semibold">Order Total</span>
+            <strong className="text-xl md:text-2xl text-orange-600">
+              ${allTotal.toFixed(2)}
+            </strong>
+          </p>
+        </div>
+
         <button
-          className="w-full p-4 mt-7 rounded-4xl bg-orange-500 text-white cursor-pointer"
+          className="w-full p-3 md:p-4 rounded-3xl bg-orange-500 text-white font-semibold cursor-pointer hover:bg-orange-600 transition"
           onClick={OnstartDefault}
         >
           Start New Order

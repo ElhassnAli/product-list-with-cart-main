@@ -16,8 +16,8 @@ export default function Cart({
   });
   return (
     <div
-      className={`w-[25%] bg-white rounded-2xl p-2.5 ${
-        onOrder && "pointer-events-none opacity-50 "
+      className={`w-full md:w-[25%] bg-white rounded-2xl p-2.5 ${
+        onOrder && "pointer-events-none opacity-50"
       }`}
     >
       <header className="text-orange-600 font-bold">
@@ -42,11 +42,7 @@ export default function Cart({
                 </button>
               </CartProducts>
             ))}
-            <Total
-              products={products}
-              onConfirm={onConfirm}
-              
-            />
+            <Total products={products} onConfirm={onConfirm} />
           </>
         ) : (
           <Empty />

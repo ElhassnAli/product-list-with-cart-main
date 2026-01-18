@@ -7,10 +7,9 @@ export default function Product({
   onAddToCart,
   onIncrement,
   onDecrement,
-  
 }) {
   return (
-    <div className="w-[32%]">
+    <div className="w-full sm:w-1/2 md:w-[32%]">
       <div className="relative mb-7">
         <img
           src={data.image.desktop}
@@ -18,14 +17,13 @@ export default function Product({
           className={"rounded-2xl"}
         />
         {cartItem ? (
-          <CountButton 
+          <CountButton
             data={cartItem}
             onIncrement={() => onIncrement(cartItem.name)}
             onDecrement={() => onDecrement(cartItem.name)}
-            
           />
         ) : (
-          <Button data={data} onAddToCart={onAddToCart}  >
+          <Button data={data} onAddToCart={onAddToCart}>
             Add To Cart
           </Button>
         )}

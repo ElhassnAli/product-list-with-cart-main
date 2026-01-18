@@ -2,5 +2,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap");
 body {
   font-family: "Red Hat Text", sans-serif;
-  
+}
+@media (max-width: 768px) {
+  .w-16 {
+    width: 4rem;
+  }
+  .h-16 {
+    height: 4rem;
+  }
 }

@@ -8,7 +8,7 @@ export default function App() {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [cartProducts, setCartProducts] = useState([]);
-  const [isConfirmOrder,setIsConfirmOrder]= useState(false)
+  const [isConfirmOrder, setIsConfirmOrder] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
@@ -51,13 +51,13 @@ export default function App() {
     setCartProducts((c) => c.filter((p) => p.name !== name));
   };
 
-  function startDefault(){
- setCartProducts([])
- setIsConfirmOrder(false)
+  function startDefault() {
+    setCartProducts([]);
+    setIsConfirmOrder(false);
   }
 
   return (
-    <div className="p-12 bg-rose-50 flex justify-between items-start">
+    <div className="p-6 md:p-12 bg-rose-50 flex flex-col md:flex-row justify-between items-start gap-6">
       {isLoading && <Loader />}
       <MainPage
         data={data}
@@ -75,7 +75,9 @@ export default function App() {
         onConfirm={setIsConfirmOrder}
         onOrder={isConfirmOrder}
       />
-      {isConfirmOrder && <OrderConfirmed cart={cartProducts} OnstartDefault={startDefault} />}
+      {isConfirmOrder && (
+        <OrderConfirmed cart={cartProducts} OnstartDefault={startDefault} />
+      )}
     </div>
   );
 }

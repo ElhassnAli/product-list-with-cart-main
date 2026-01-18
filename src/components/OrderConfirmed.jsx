@@ -20,7 +20,7 @@ function OrderConfirmed({ cart, OnstartDefault }) {
           {cart.map((c) => (
             <div
               key={c.name}
-              className="flex justify-between items-start gap-3 mb-4 pb-4 border-b border-gray-200 last:border-b-0"
+              className="flex justify-between items-start gap-3 mb-4 pb-4   "
             >
               <div className="flex gap-3">
                 <img
@@ -46,7 +46,7 @@ function OrderConfirmed({ cart, OnstartDefault }) {
             </div>
           ))}
 
-          <p className="flex justify-between pt-4 border-t border-gray-300 mt-4">
+          <p className="flex justify-between pt-4  mt-4">
             <span className="font-semibold">Order Total</span>
             <strong className="text-xl md:text-2xl text-orange-600">
               ${allTotal.toFixed(2)}

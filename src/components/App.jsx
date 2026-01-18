@@ -8,12 +8,12 @@ export default function App() {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [cartProducts, setCartProducts] = useState([]);
-  const [isConfirmOrder, setIsConfirmOrder] = useState(false);
+  const [isConfirmOrder,setIsConfirmOrder]= useState(false)
 
   useEffect(() => {
     async function fetchData() {
       setIsLoading(true);
-      const res = await fetch(`${import.meta.env.BASE_URL}data.json`);
+      const res = await fetch("/data.json");
       const data = await res.json();
       setData(data);
       setIsLoading(false);
@@ -51,9 +51,9 @@ export default function App() {
     setCartProducts((c) => c.filter((p) => p.name !== name));
   };
 
-  function startDefault() {
-    setCartProducts([]);
-    setIsConfirmOrder(false);
+  function startDefault(){
+ setCartProducts([])
+ setIsConfirmOrder(false)
   }
 
   return (
@@ -75,9 +75,7 @@ export default function App() {
         onConfirm={setIsConfirmOrder}
         onOrder={isConfirmOrder}
       />
-      {isConfirmOrder && (
-        <OrderConfirmed cart={cartProducts} OnstartDefault={startDefault} />
-      )}
+      {isConfirmOrder && <OrderConfirmed cart={cartProducts} OnstartDefault={startDefault} />}
     </div>
   );
 }

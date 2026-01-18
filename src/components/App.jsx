@@ -13,7 +13,7 @@ export default function App() {
   useEffect(() => {
     async function fetchData() {
       setIsLoading(true);
-      const res = await fetch("/data.json");
+      const res = await fetch(`${import.meta.env.BASE_URL}data.json`);
       const data = await res.json();
       setData(data);
       setIsLoading(false);

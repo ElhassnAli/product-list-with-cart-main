@@ -12,7 +12,7 @@ export default function MainPage({
     <div
       className={`w-full md:w-[70%] ${onOrder && "pointer-events-none opacity-50"}`}
     >
-      <header className="text-3xl md:text-5xl mb-5 font-serif">Deserts</header>
+      <header className="text-3xl md:text-5xl mb-5 font-serif">Desserts</header>
       <main className="flex flex-wrap gap-3 md:gap-5">
         {data.map((d) => {
           const cartItem = cartProducts.find((p) => p.name === d.name);
